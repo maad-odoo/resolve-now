@@ -1,0 +1,11 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Grievance List</h1>
+<ul>
+    {% for grievance in grievances %}
+        <li>
+            <a href="{% url 'grievance_detail' grievance.pk %}">{{ grievance.type }} - {{ grievance.status }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
